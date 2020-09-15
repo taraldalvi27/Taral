@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bank Application</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="bankapp.css">
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+<body>
+
+	<div class="jumbotron">
+		<h1>Token Generator</h1>
+		<div class="form">
+			<input type="text" class="form-control" name="name" id="name" placeholder="Your name" required>
+			<select class="btn btn-secondary" name="action" id="action">
+				<option value="1">Open/Close Account</option>
+				<option value="2">Deposit/Withdraw Money</option>
+				<option value="3">Enquiry</option>
+			</select>
+			<br />
+			<button type="submit" class="btn btn-success" name="generate" id="generate" onclick="myFunc()">Submit</button>
+		</div>
+		</form>
+	</div>
+
+	<div id="token list">
+		<h2>Tokens Generated: </h2>
+		<div>
+			<table id="Table" border="1">
+				<tr>
+					<th class="header">Name</th>
+					<th class="header">Action Performed</th>
+					<th class="header">Token No.</th>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<script>
+		var token1 = 1;
+		var token2 = 1;
+		var token3 = 1;
+		function myFunc() {
+			var name = document.getElementById("name").value;
+			var action = document.getElementById("action").value;
+			var table = document.getElementById("Table");	
+			var row = table.insertRow(0);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+
+            	
+            	if (action == 1) {
+                	var a = token1;
+                	cell1.innerHTML = name;
+                	cell2.innerHTML = "Open/Close Account";
+                	cell3.innerHTML = a++;
+                	token1 = a;
+                }
+
+                
+                if (action == 2) {
+                	var b = token2;
+                	cell1.innerHTML = name;
+                	cell2.innerHTML = "Deposit/Withdraw Money";
+                	cell3.innerHTML = b++;
+                	token2 = b;
+                }
+
+				
+				if (action == 3) {
+                	var c = token3;
+                	cell1.innerHTML = name;
+                	cell2.innerHTML = "Enquiry";
+                	cell3.innerHTML = c++;
+                	token3 = c;
+                }
+		}
+ 	</script>
+
+ 	<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+    	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+    	
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script> -->
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+
+    
+
+		
+</body>
+</html>
